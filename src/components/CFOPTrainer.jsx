@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import AlgRow from './AlgRow'
 import CaseSelect from './CaseSelect'
 import AlgPlayer from './AlgPlayer'
-import CubeView2D from './CubeView2D'
+import CubeView from './CubeView'
 import { solvedState, applyAlg } from '../cube/state'
 import { speak, fmt } from '../utils'
 
@@ -129,9 +129,9 @@ export default function CFOPTrainer({ cases, progress, onUpdate }) {
             <div style={{ fontFamily: 'var(--mono)', fontSize: 15, color: 'var(--text)', lineHeight: 1.8 }}>{tc.scramble}</div>
             <button onClick={() => speak(tc.scramble)} style={{ ...S, marginTop: 10 }}>🔊 重新朗读</button>
 
-            {/* 打乱后的魔方状态（随题目同步更新） */}
+            {/* 打乱后的魔方状态（随题目同步更新，可切 2D/3D） */}
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: 14 }}>
-              <CubeView2D state={applyAlg(solvedState(), tc.scramble)} size={14} />
+              <CubeView state={applyAlg(solvedState(), tc.scramble)} size={14} />
             </div>
           </div>
 

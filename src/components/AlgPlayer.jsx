@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useMemo } from 'react'
-import CubeView2D from './CubeView2D'
+import CubeView from './CubeView'
 import AlgRow from './AlgRow'
 import { solvedState, applyAlg, applyMove, isSolved } from '../cube/state'
 import { parseMoves, speak } from '../utils'
@@ -66,9 +66,9 @@ export default function AlgPlayer({ scramble, alg, size = 15, speakMoves = false
 
   return (
     <div>
-      {/* 魔方视图 */}
+      {/* 魔方视图（可切 2D / 3D） */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 14 }}>
-        <CubeView2D state={state} size={size} />
+        <CubeView state={state} size={size} />
       </div>
 
       {/* 进度 + 还原提示 */}

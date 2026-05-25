@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import AlgRow from './AlgRow'
 import AlgPlayer from './AlgPlayer'
-import CubeView2D from './CubeView2D'
+import CubeView from './CubeView'
 import { solvedState, applyAlg } from '../cube/state'
 import { speak, fmt, parseMoves, randomScramble } from '../utils'
 
@@ -178,9 +178,9 @@ export default function LBLStep({ step, progress, onUpdate }) {
               </div>
               <button onClick={() => speak(scramble)} style={{ ...S, color: 'var(--muted)', marginTop: 8 }}>🔊 朗读打乱</button>
 
-              {/* 打乱后的目标练习状态 */}
+              {/* 打乱后的目标练习状态（可切 2D/3D） */}
               <div style={{ display: 'flex', justifyContent: 'center', marginTop: 14 }}>
-                <CubeView2D state={applyAlg(solvedState(), scramble)} size={14} />
+                <CubeView state={applyAlg(solvedState(), scramble)} size={14} />
               </div>
             </div>
           </div>
