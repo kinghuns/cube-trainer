@@ -1,0 +1,57 @@
+/* ── Reset ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Design tokens ─────────────────────────────────── */
+:root {
+  --bg:       #0d0d0f;
+  --surface:  #16161a;
+  --surface2: #1e1e24;
+  --border:   #2a2a35;
+  --accent:   #e8ff47;
+  --accent2:  #47c8ff;
+  --accent3:  #ff6b6b;
+  --text:     #e8e8f0;
+  --muted:    #6b6b80;
+  --mastered: #4ade80;
+  --mono: 'Space Mono', monospace;
+  --sans: 'Noto Sans SC', sans-serif;
+}
+
+/* ── Base ──────────────────────────────────────────── */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--sans);
+}
+
+/* ── Layout ────────────────────────────────────────── */
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 80px;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 0 10px 80px;
+  }
+}
+
+/* ── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar         { width: 4px; }
+::-webkit-scrollbar-track   { background: var(--bg); }
+::-webkit-scrollbar-thumb   { background: var(--border); border-radius: 2px; }
